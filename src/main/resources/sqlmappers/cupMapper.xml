@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.torch.mapper.cupMapper">
+  <resultMap id="BaseResultMap" type="com.torch.model.cup">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="cup-name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cup-size" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cup-price" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cup-name, cup-size, cup-price
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cup
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cup
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.torch.model.cup">
+    insert into cup (id, cup-name, cup-size, 
+      cup-price)
+    values (#{id,jdbcType=INTEGER}, #{cupName,jdbcType=VARCHAR}, #{cupSize,jdbcType=VARCHAR}, 
+      #{cupPrice,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.torch.model.cup">
+    insert into cup
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cupName != null">
+        cup-name,
+      </if>
+      <if test="cupSize != null">
+        cup-size,
+      </if>
+      <if test="cupPrice != null">
+        cup-price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cupName != null">
+        #{cupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cupSize != null">
+        #{cupSize,jdbcType=VARCHAR},
+      </if>
+      <if test="cupPrice != null">
+        #{cupPrice,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.torch.model.cup">
+    update cup
+    <set>
+      <if test="cupName != null">
+        cup-name = #{cupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cupSize != null">
+        cup-size = #{cupSize,jdbcType=VARCHAR},
+      </if>
+      <if test="cupPrice != null">
+        cup-price = #{cupPrice,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.torch.model.cup">
+    update cup
+    set cup-name = #{cupName,jdbcType=VARCHAR},
+      cup-size = #{cupSize,jdbcType=VARCHAR},
+      cup-price = #{cupPrice,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.torch.model.cup">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="cup-name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cup-size" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cup-price" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cup-name, cup-size, cup-price
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cup
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cup
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.torch.model.cup">
+    insert into cup (id, cup-name, cup-size, 
+      cup-price)
+    values (#{id,jdbcType=INTEGER}, #{cupName,jdbcType=VARCHAR}, #{cupSize,jdbcType=VARCHAR}, 
+      #{cupPrice,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.torch.model.cup">
+    insert into cup
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cupName != null">
+        cup-name,
+      </if>
+      <if test="cupSize != null">
+        cup-size,
+      </if>
+      <if test="cupPrice != null">
+        cup-price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cupName != null">
+        #{cupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cupSize != null">
+        #{cupSize,jdbcType=VARCHAR},
+      </if>
+      <if test="cupPrice != null">
+        #{cupPrice,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.torch.model.cup">
+    update cup
+    <set>
+      <if test="cupName != null">
+        cup-name = #{cupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cupSize != null">
+        cup-size = #{cupSize,jdbcType=VARCHAR},
+      </if>
+      <if test="cupPrice != null">
+        cup-price = #{cupPrice,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.torch.model.cup">
+    update cup
+    set cup-name = #{cupName,jdbcType=VARCHAR},
+      cup-size = #{cupSize,jdbcType=VARCHAR},
+      cup-price = #{cupPrice,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
